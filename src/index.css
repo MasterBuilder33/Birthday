@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 text-gray-900 min-h-screen;
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-3.5 px-7 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/80 backdrop-blur-sm hover:bg-white/90 text-gray-700 font-semibold py-3.5 px-7 rounded-2xl border border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95;
+  }
+  
+  .card {
+    @apply bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-white/30 p-6 transition-all duration-300 hover:shadow-2xl hover:bg-white/80;
+  }
+  
+  .card-gradient {
+    @apply bg-gradient-to-br from-white/80 via-blue-50/50 to-cyan-50/30 backdrop-blur-lg rounded-3xl shadow-xl border border-white/40 p-6 transition-all duration-300 hover:shadow-2xl hover:from-white/90 hover:via-blue-50/60 hover:to-cyan-50/40;
+  }
+  
+  .input-field {
+    @apply w-full px-5 py-4 border border-white/30 bg-white/60 backdrop-blur-sm rounded-2xl focus:ring-2 focus:ring-primary-400 focus:border-primary-400 focus:bg-white/80 transition-all duration-300 placeholder-gray-500;
+  }
+  
+  .glass-header {
+    @apply bg-white/80 backdrop-blur-lg border-b border-white/30 shadow-lg;
+  }
+  
+  .birthday-today {
+    @apply bg-gradient-to-r from-primary-500/20 via-cyan-400/20 to-blue-400/20 backdrop-blur-sm border-2 border-primary-400/50 shadow-xl;
+  }
+  
+  .upcoming-card {
+    @apply border-2 border-primary-300/40 bg-gradient-to-br from-primary-50/60 to-cyan-50/40;
+  }
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+}
+
+/* Floating animation for birthday cards */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Shimmer effect for special cards */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
